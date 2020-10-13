@@ -5,9 +5,7 @@
 
 body {
     height: 100vh;
-    color: rgb(12, 1, 1);
-    /*background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    text-align: center;*/
+    color: white;
 }
 
 :root {
@@ -18,8 +16,3 @@ body, input, buttom, textarea {
     font: 400 1.8rem/1 'Nunito', sans-serif;
 }
 
-#page-landing {
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    text-align: center;
-    min-height: 100vh;
-}
