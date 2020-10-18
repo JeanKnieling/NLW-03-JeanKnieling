@@ -1,5 +1,5 @@
 #page-landing {
-  background: linear-gradient(329.54deg, /*#15b6d6*/black 0%, #15b6d6 100%);
+  background: linear-gradient(329.54deg, /*#15b6d6*/black 0%, /*#15b6d6*/ aqua 100%);
 
   text-align: center;
   min-height: 100vh;

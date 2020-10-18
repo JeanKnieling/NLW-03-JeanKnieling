@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lar das meninas</title>
+    <title>{{orphanage.name}}</title>
 
     <link
       rel="stylesheet"
@@ -50,14 +50,17 @@
 
       <main class="animate-appear with-sidebar">
         <div class="orphanage-details">
-          <img src="/images/home.jpg" alt="Lar das meninas" />
+          <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}" />
 
+          
           <div class="images">
+            {{#each orphanage.images}}
             <button onclick="selectImage(event)" class="active" type="button">
-              <img src="https://source.unsplash.com/random?id=1" alt="Lar das meninas" />
+              <img src="{{this}}" alt="{{orphanage.name}}" />
             </button>
+            {{/each}}
 
-            <button onclick="selectImage(event)" type="button">
+           <!-- <button onclick="selectImage(event)" type="button"> //Essas eram as imagens anteriores//
               <img src="https://source.unsplash.com/random?id=2" alt="Lar das meninas" />
             </button>
 
@@ -75,21 +78,25 @@
 
             <button onclick="selectImage(event)" type="button">
               <img src="https://source.unsplash.com/random?id=6" alt="Lar das meninas" />
-            </button>
+            </button>-->
           </div>
 
           <div class="orphanage-details-content">
-            <h1>Lar das meninas</h1>
+            <h1>{{orphanage.name}}</h1>
 
             <p>
-              Presta assistência a crianças de 06 a 15 anos que se encontre em
-              situação de risco e/ou vulnerabilidade social.
+              {{orphanage.about}}
             </p>
 
             <div class="map-container">
               <div id="mapid"></div>
+              <span
+                data-lat="{{orphanage.lat}}"
+                data-lng="{{orphanage.lng}}"></span>
               <footer>
-                <a href="">Ver rotas no Google Maps</a>
+                <a
+                 target="_blank"
+                 href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=15">Ver rotas no Google Maps</a>
               </footer>
             </div>
 
@@ -97,29 +104,41 @@
 
             <h2>Intruções para visita</h2>
 
-            <p>
-              Venha como se sentir a vontade e traga muito amor e paciência para
-              dar
-            </p>
+            <p>{{orphanage.instructions}}</p>
 
             <div class="open-details">
               <div class="hour">
                 <img src="/images/clock.svg" alt="Horários" />
-                Horários de visitas das 18h até 8h
+                {{orphanage.opening_hours}}
               </div>
-              <div class="open-on-weekends">
-                <img src="/images/info.svg" alt="Informações" />
-                Atendemos aos fins de semana
-              </div>
+
+              {{#if orphanage.open_on_weekends}}
+                <div class="open-on-weekends open">
+
+                  <img src="/images/info.svg" alt="Informações" />
+                  Atendemos aos fins de semana
+
+                </div>
+                {{else}}
+
+                  <div class="open-on-weekends closed">
+
+                  <img src="/images/info-red.svg" alt="Informações" />
+                  Não atendemos aos fins de semana
+
+                </div>
+              {{/if}}
+
             </div>
 
-            <button class="primary-button" type="button">
+            <a href="https://api.whatsapp.com/send?1=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, quero conversar sobre visitas no {{orphanage.name}}" target="_blank"
+              class="primary-button" type="button">
               <img
                 src="/images/whatsapp.svg"
                 alt="Chamar no whatsapp"
               />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>

@@ -1,6 +1,7 @@
 #page-create-orphanage {
     display: flex;
     min-height: 100vh;
+    background: lightgray;
 }
 
 main {
