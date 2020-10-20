@@ -40,7 +40,7 @@ main h1 {
 .visit a {
   width: 8rem;
   height: 8rem;
-  background: /*#ffd666*/ linear-gradient(329.54deg, black 0%, #15b6d6 100%);;
+  background: /*#ffd666*/ linear-gradient(329.54deg, black 0%, aqua 100%);;
 
   border: none;
   border-radius: 3rem;

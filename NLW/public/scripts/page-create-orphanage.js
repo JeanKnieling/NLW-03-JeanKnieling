@@ -6,7 +6,7 @@
 -> Array = [ ""]*/
 
 // create map
-const map = L.map("mapid").setView([-27.222633, -49.6455874], 16);
+const map = L.map("mapid").setView([-27.222633, -49.6455874], 15);
 // create and add tileLayer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
@@ -18,7 +18,6 @@ const icon = L.icon({
 });
 
 let marker;
-
 // create and add marker
 map.on("click", (event) => {
   const lat = event.latlng.lat;
